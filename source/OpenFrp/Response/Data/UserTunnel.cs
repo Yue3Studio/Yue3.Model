@@ -165,11 +165,6 @@ namespace Yue3.Model.OpenFrp.Response.Data
         /// </summary>
         [JsonPropertyName("proxyProtocolVersion")]
         public bool ProxyProtocolVersion2 { get; set; }
-        ///// <summary>
-        ///// URL 路由
-        ///// </summary>
-        //[JsonPropertyName("url_route")]
-        //public string? URLRoute { get; set; }
 
         /// <summary>
         /// 隧道自定义配置
@@ -190,5 +185,18 @@ namespace Yue3.Model.OpenFrp.Response.Data
         [JsonPropertyName("online")]
         public bool IsOnline { get; set; }
 
+
+        /// <summary>
+        /// 强制 HTTPS (仅域名隧道有效)
+        /// </summary>
+        [JsonPropertyName("forceHttps")]
+        public bool ForceHttps { get; set; }
+
+        /// <summary>
+        /// 自动 TLS
+        /// </summary>
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonPropertyName("autoTls")]
+        public string? AutoTls { get; set; }
     }
 }
